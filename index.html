@@ -5,19 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
-    <header>
-        <div id="bar">
+    <!--header-->
+    <div id="header">
+        <div id="insideBar">
+            <img src="logo.png" alt="logo"/>
+            <form action="">
+                <div class="search">
+                    <input class="search_input" type="search" placeholder="Search for a friend...">
+                    <span class="search_icon material-symbols-outlined">search</span>
+                </div>
+            </form>
             
+            <img src="avatar.png" alt="default avatar" id="avatar"/>
+        </div>
+    </div>
+    <!--content area-->
+    <div id="content">
+
+
+        <div id="left_container">
+            <p class="left_side">Sort by</p>
+            <input type="radio" name="sort_btn" id="radio1" class="radio">
+            <label for="radio1" class="left_side">User</label>
+            <br>
+            <input type="radio" name="sort_btn" id="radio2" class="radio">
+            <label for="radio2" class="left_side">Length</label>
+            <p class="left_side">Filter by</p>
+            <div>
+                <label for="filter_user" class="left_side">User</label>
+                <input type="text" id="filter_user">
+                <br>
+                <label for="filter_length_from" class="left_side">Length from</label>
+                <input type="number" id="filter_length_from" min="1">
+                <label for="filter_length_to" class="left_side">up to</label>
+                <input type="number" id="filter_length_to" min="1">
+            </div>
         </div>
 
-    </header>
-    <main>
-        <section>
+
+
+        <div id="right_side">
             
-        </section>
-    </main>
+            <div id="post_adding">
+                <p>Welcome, <span id="Name">Anastasia Smith</span></p>
+                <textarea placeholder="What's on your mind?"></textarea>
+                <input id="post_button" type="submit" value="Post">
+            </div>
+
+            <!--Posts-->
+            <div id="Posts">
+                
+                <div class="Post_header">
+                    <img src="avatar.png"/>
+                    <p><span id="Name">Anastasia Smith</span></p>
+                </div>
+                <div class="Post_content">
+                    <p><span id="Post_title1">Office impsum you must be</span></p>
+                    <p><span id="Post_text">Office ipsum you must be muted. Accountable whatever growth ensure keep diarize got. Metal live finish die shower principles strategies line. Dogpile productive while cross-pollination win-win-win pushback first-order keywords market. Seems third three respectively hammer you. Breakout roll later indicators beforehand unit bells cc bandwagon deck. Didn't way game.</span></p>
+                </div>
+
+                <div class="Post_header">
+                    <img src="avatar.png"/>
+                    <p><span id="Name">Anastasia Smith</span></p>
+                </div>
+                <div class="Post_content">
+                    <p><span id="Post_title2">Office impsum you must be</span></p>
+                    <p><span id="Post_text2">Office ipsum you must be muted. Accountable whatever growth ensure keep diarize got. Metal live finish die shower principles strategies line. Dogpile productive while cross-pollination win-win-win pushback first-order keywords market. Seems third three respectively hammer you. Breakout roll later indicators beforehand unit bells cc bandwagon deck. Didn't way game.</span></p>
+                </div>
+
+                <div class="Post_header">
+                    <img src="avatar.png"/>
+                    <p><span id="Name">Anastasia Smith</span></p>
+                </div>
+                <div class="Post_content">
+                    <p><span id="Post_title3">Office impsum you must be</span></p>
+                    <p><span id="Post_text3">Office ipsum you must be muted. Accountable whatever growth ensure keep diarize got. Metal live finish die shower principles strategies line. Dogpile productive while cross-pollination win-win-win pushback first-order keywords market. Seems third three respectively hammer you. Breakout roll later indicators beforehand unit bells cc bandwagon deck. Didn't way game.</span></p>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <div id="footer">
+        <img src="logo.png" alt="logo"/>
+   </div>
     
 </body>
 </html>
