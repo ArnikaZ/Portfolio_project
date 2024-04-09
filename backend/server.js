@@ -104,19 +104,20 @@ app.get('/users/:id', async (req, res) => {
 app.get('/albums/:id', async (req, res) => {
     const { id } = req.params;
 
+    const result = {};
+
     const albums = await fetch(`${apiURL}/albums`).then((response) => response.json());
-    const album = albums.find((album) => album.id == id);
+    const userAlbums = albums.filter((album) => album.userId == id);
 
-    const photos = await fetch(`${apiURL}/photos`).then((response) => response.json());
-    const albumPhotos = photos.filter((photo) => photo.albumId == id);
-
-    const result = {
-        ...album,
-        photos: albumPhotos,
-    };
+    for (const album of userAlbums) {
+        const photos = await fetch(`${apiURL}/photos`).then(response => response.json());
+        const albumPhotos = photos.filter(photo => photo.albumId == album.id);
+        result[album.id] = albumPhotos.map(photo => ({ ...photo }));
+    }
 
     res.json(result);
 });
+
 
 // search for a user
 app.get('/search/:query', async (req, res) => {
