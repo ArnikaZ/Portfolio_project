@@ -32,7 +32,6 @@ function renderPosts(posts) {
 // gets posts and puts them on the front page
 async function fetchPosts() {
     const posts = await fetch('http://localhost:3001/posts').then(response => response.json());
-    console.log(posts);
     renderPosts(posts);
 }
 
@@ -49,7 +48,6 @@ form.addEventListener('submit', async (e) => {
     const lengthMax = form.filter_length_to.value
 
     e.preventDefault();
-    console.log(sortby, order, user, lengthMin, lengthMax);
 
     const posts = await fetch(`http://localhost:3001/posts?sortby=${sortby}&order=${order}&user=${user}&lengthMin=${lengthMin}&lengthMax=${lengthMax}`).then(response => response.json());
     console.log(posts);
