@@ -70,7 +70,6 @@ function renderRecentPosts(posts) {
 
 async function loadProfile() {
     const profile = await fetch(`http://localhost:3001/users/${userId}`).then(response => response.json());
-    console.log(profile);
 
     renderProfile(profile);
 }

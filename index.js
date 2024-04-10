@@ -52,4 +52,33 @@ form.addEventListener('submit', async (e) => {
     const posts = await fetch(`http://localhost:3001/posts?sortby=${sortby}&order=${order}&user=${user}&lengthMin=${lengthMin}&lengthMax=${lengthMax}`).then(response => response.json());
     console.log(posts);
     renderPosts(posts);
-})
+});
+
+// add a post
+const postForm = document.querySelector('#post_adding');
+
+postForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const content = postForm.content.value;
+    const userId = 3; // hardcoded, we are Clementine Bauch
+
+    const result = await fetch('http://localhost:3001/posts', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            content: content,
+            author: userId,
+        })
+    }).then(response => response.json());
+
+    // if post id was returned
+    if (result.id) {
+        alert('Post added successfully');
+    } else {
+        alert('Could not post');
+    }
+
+    window.location.reload();
+});

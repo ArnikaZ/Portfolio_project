@@ -14,11 +14,11 @@
     <!--header-->
     <div id="header">
         <div id="insideBar">
-            <img src="logo.png" alt="logo"/>
-            <form action="">
+            <img id="logo" src="logo.png" alt="logo"/>
+            <form id="search-form">
                 <div class="search">
                     <input class="search_input" type="search" placeholder="Search for a friend...">
-                    <span class="search_icon material-symbols-outlined">search</span>
+                    <button class="search_icon material-symbols-outlined" type="submit"><span>search</span></button>
                 </div>
             </form>
             
@@ -53,11 +53,11 @@
 
         <div id="right_side">
             
-            <div id="post_adding">
-                <p>Welcome, <span id="Name">Anastasia Smith</span></p>
-                <textarea placeholder="What's on your mind?"></textarea>
+            <form id="post_adding">
+                <p>Welcome, <span id="Name">Clementine Bauch</span></p>
+                <textarea name="content" placeholder="What's on your mind?"></textarea>
                 <input id="post_button" type="submit" value="Post">
-            </div>
+            </form>
 
             <!--Posts-->
             <div id="Posts">
@@ -71,6 +71,7 @@
         <img src="logo.png" alt="logo"/>
    </div>
     
+   <script src="header.js"></script>
    <script src="index.js"></script>
 </body>
 </html>

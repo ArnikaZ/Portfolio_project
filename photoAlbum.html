@@ -14,13 +14,14 @@
     <!--header-->
     <div id="header">
         <div id="insideBar">
-            <img src="logo.png" alt="logo"/>
-            <form action="">
+            <img id="logo" src="logo.png" alt="logo"/>
+            <form id="search-form">
                 <div class="search">
                     <input class="search_input" type="search" placeholder="Search for a friend...">
-                    <span class="search_icon material-symbols-outlined">search</span>
+                    <button class="search_icon material-symbols-outlined" type="submit"><span>search</span></button>
                 </div>
             </form>
+            
             <img src="avatar.png" alt="default avatar" id="avatar"/>
         </div>
     </div>
@@ -39,17 +40,14 @@
 
          <!--Gallery-->
          <div id="Gallery">
-            <h2>Photos</h2>
-            <img src="avatar.png" id="Album_photo1"/>
-            <img src="avatar.png" id="Album_photo2"/>
-            <img src="avatar.png" id="Album_photo3"/>
-            <img src="avatar.png" id="Album_photo4"/>
+            
         </div>
     </div>
     <div id="footer">
         <img src="logo.png" alt="logo"/>
    </div>
 
+   <script src="header.js"></script>
    <script src="photoAlbum.js"></script>
 </body>
 </html>    

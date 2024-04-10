@@ -6,6 +6,7 @@ const port = 3001;
 const apiURL = 'https://jsonplaceholder.typicode.com';
 
 app.use(cors());
+app.use(express.json());
 
 // get all posts (sorted, filtered, and limited)
 app.get('/posts', async (req, res) => {
@@ -142,6 +143,24 @@ app.get('/search/:query', async (req, res) => {
     } else {
         res.json({ message: 'User not found' });
     }
+});
+
+// post a post
+app.post('/posts', async (req, res) => {
+    const { content, author } = req.body;
+
+    const result = await fetch(`${apiURL}/posts`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            content,
+            author
+        })
+    }).then(response => response.json());
+
+    res.json(result);
 });
 
 app.listen(port, () => {

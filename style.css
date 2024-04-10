@@ -18,6 +18,10 @@ body, html {
     
 }
 
+#logo, #avatar {
+    cursor: pointer;
+}
+
 .search{
     width: max-content;
     display: flex;
@@ -40,6 +44,8 @@ body, html {
     position: absolute; 
     right: 14px; 
     cursor: pointer;
+    border: none;
+    background-color: transparent;
 }
 
 #avatar{
