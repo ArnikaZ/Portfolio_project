@@ -52,32 +52,7 @@ app.get('/posts', async (req, res) => {
         result = result.slice(0, limit);
     }
 
-    res.json(result);
-    /*
-    example response:
-    [
-        {
-            "userId": 9,
-            "id": 84,
-            "title": "optio ipsam molestias necessitatibus occaecati facilis veritatis dolores aut",
-            "body": "sint molestiae magni a et quos\neaque et quasi\nut rerum debitis similique veniam\nrecusandae dignissimos dolor incidunt consequatur odio",
-            "length": 134,
-            "user": "Glenna Reichert",
-            "username": "Delphine",
-            "email": "Chaim_McDermott@dana.io"
-        },
-        {
-            "userId": 9,
-            "id": 90,
-            "title": "ad iusto omnis odit dolor voluptatibus",
-            "body": "minus omnis soluta quia\nqui sed adipisci voluptates illum ipsam voluptatem\neligendi officia ut in\neos soluta similique molestias praesentium blanditiis",
-            "length": 151,
-            "user": "Glenna Reichert",
-            "username": "Delphine",
-            "email": "Chaim_McDermott@dana.io"
-        }
-    ]
-    */
+    res.status(200).json(result);
 });
 
 // get a particular user
@@ -86,6 +61,12 @@ app.get('/users/:id', async (req, res) => {
 
     const users = await fetch(`${apiURL}/users`).then((response) => response.json());
     const user = users.find((user) => user.id == id);
+
+    // if user doesn't exist
+    if (!user) {
+        res.status(404).json({ error: 'User not found' });
+        return;
+    }
 
     const recentPosts = await fetch(`http://localhost:3001/posts?user=${user.name}&sortby=id&order=desc&limit=3`).then(response => response.json());
 
@@ -97,8 +78,7 @@ app.get('/users/:id', async (req, res) => {
         albums: userAlbums,
         recentPosts: recentPosts,
     };
-
-    res.json(result);
+    res.status(200).json(result);
 });
 
 // get all albums of a particular user
@@ -116,7 +96,7 @@ app.get('/albums/:id', async (req, res) => {
         result[album.id] = albumPhotos.map(photo => ({ ...photo }));
     }
 
-    res.json(result);
+    res.status(200).json(result);
 });
 
 
@@ -139,9 +119,9 @@ app.get('/search/:query', async (req, res) => {
     }
 
     if (user) {
-        res.json(user);
+        res.status(200).json(user);
     } else {
-        res.json({ message: 'User not found' });
+        res.status(404).json({ error: 'User not found' });
     }
 });
 
@@ -160,9 +140,13 @@ app.post('/posts', async (req, res) => {
         })
     }).then(response => response.json());
 
-    res.json(result);
+    res.status(200).json(result);
 });
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
+if (require.main === module) {
+    app.listen(port, () => {
+        console.log(`Server is running on port ${port}`);
+    });
+} 
+
+module.exports = app;
