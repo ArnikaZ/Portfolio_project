@@ -1,0 +1,14 @@
+{
+  "name": "portfolio_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "initialize": "cd server && npm install && cd ../jest && npm install",
+    "test": "cd server && npm run test:coverage && start ./coverage/lcov-report/index.html",
+    "start": "cd server && npm run start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
