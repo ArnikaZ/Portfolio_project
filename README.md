@@ -23,7 +23,7 @@ Po inicjalizacji jest możliwość użycia następujących komend:
 
 ## Funkcjonalności
 
-Aplikacja korzysta pośrednio z API `https://jsonplaceholder.typicode.com` (zapytania trafiają najpierw do naszego serwera a potem dopiero do API).
+Aplikacja korzysta pośrednio z API `https://jsonplaceholder.typicode.com` (zapytania trafiają najpierw do naszego serwera a potem dopiero do API). Umożliwia przeglądanie, dodawanie, filtrowanie i sortowanie postów, wyświetlanie informacji o użytkowniku, wyświetlanie jego postów, albumów oraz zawartych w nich zdjęć.
 
 ### Strona główna
 Po uruchomieniu wyświetla się strona główna:
