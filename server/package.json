@@ -6,22 +6,37 @@
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --coverage",
+    "clearCache": "jest --clearCache",
     "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.2",
+    "fetch-mock-jest": "^1.5.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jest-fetch-mock": "^3.0.3",
+    "jsdom": "^24.0.0",
+    "supertest": "^6.3.4"
+  },
   "dependencies": {
+    "axios": "^1.6.8",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "jest-fetch-mock": "^3.0.3",
     "jsdom": "^24.0.0"
   },
   "jest": {
+    "rootDir": "./",
     "collectCoverage": true,
     "testEnvironment": "node",
     "setupFiles": [
-      "<rootDir>/jest.setup.js"
+      "../jest/jest.setup.js"
+    ],
+    "collectCoverageFrom": [
+      "<rootDir>/*.js"
     ]
   }
 }
