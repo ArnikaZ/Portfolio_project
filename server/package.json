@@ -31,12 +31,16 @@
   "jest": {
     "rootDir": "./",
     "collectCoverage": true,
-    "testEnvironment": "node",
     "setupFiles": [
-      "../jest/jest.setup.js"
+      "./jest/jest.setup.js"
     ],
     "collectCoverageFrom": [
       "<rootDir>/*.js"
+    ],
+    "testEnvironment": "node",
+    "verbose": true,
+    "setupFilesAfterEnv": [
+      "./jest/jest.setup.js"
     ]
   }
 }

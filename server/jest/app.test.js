@@ -1,6 +1,6 @@
 const request = require('supertest'); // Moduł do testowania aplikacji HTTP w Node.js
 
-const app = require('./server');
+const app = require('../server');
 
 // definiowanie testu jednostkowego dla endpointu /posts:
 describe('GET /posts', () => {

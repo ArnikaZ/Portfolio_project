@@ -1,6 +1,6 @@
 const request = require('supertest');
 
-const app = require('./server');
+const app = require('../server');
 
 // Blok Opisujący Testy Dotyczące /users/:id Endpoint:
 // Stworzenie bloku testów za pomocą funkcji describe dla ścieżki /users/:id.

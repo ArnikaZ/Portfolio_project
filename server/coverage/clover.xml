@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1713162478288" clover="3.2.0">
-  <project timestamp="1713162478288" name="All files">
-    <metrics statements="69" coveredstatements="66" conditionals="32" coveredconditionals="28" methods="24" coveredmethods="23" elements="125" coveredelements="117" complexity="0" loc="69" ncloc="69" packages="1" files="1" classes="1"/>
+<coverage generated="1713251990082" clover="3.2.0">
+  <project timestamp="1713251990082" name="All files">
+    <metrics statements="69" coveredstatements="62" conditionals="32" coveredconditionals="28" methods="24" coveredmethods="20" elements="125" coveredelements="110" complexity="0" loc="69" ncloc="69" packages="1" files="1" classes="1"/>
     <file name="server.js" path="C:\Users\domin\Desktop\Portfolio_project\server\server.js">
-      <metrics statements="69" coveredstatements="66" conditionals="32" coveredconditionals="28" methods="24" coveredmethods="23"/>
+      <metrics statements="69" coveredstatements="62" conditionals="32" coveredconditionals="28" methods="24" coveredmethods="20"/>
       <line num="1" count="5" type="stmt"/>
       <line num="2" count="5" type="stmt"/>
       <line num="4" count="5" type="stmt"/>
@@ -39,10 +39,10 @@
       <line num="67" count="1" type="stmt"/>
       <line num="68" count="1" type="stmt"/>
       <line num="71" count="1" type="stmt"/>
-      <line num="73" count="1" type="stmt"/>
-      <line num="74" count="100" type="stmt"/>
-      <line num="76" count="1" type="stmt"/>
-      <line num="81" count="1" type="stmt"/>
+      <line num="73" count="0" type="stmt"/>
+      <line num="74" count="0" type="stmt"/>
+      <line num="76" count="0" type="stmt"/>
+      <line num="81" count="0" type="stmt"/>
       <line num="85" count="5" type="stmt"/>
       <line num="86" count="2" type="stmt"/>
       <line num="88" count="2" type="stmt"/>
