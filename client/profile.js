@@ -93,3 +93,5 @@ async function loadRecentPosts() {
     loadProfile();
     loadGalleries();
     loadRecentPosts();
+
+module.exports = { renderProfile, renderGalleries, renderRecentPosts, loadProfile, loadGalleries, loadRecentPosts };

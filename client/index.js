@@ -43,23 +43,23 @@ async function addPost(post) {
 
     const { content, userId } = post;
 
-        const result = await fetch('http://localhost:3001/posts', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                content: content,
-                author: userId,
-            })
-        }).then(response => response.json());
+    const result = await fetch('http://localhost:3001/posts', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            content: content,
+            author: userId,
+        })
+    }).then(response => response.json());
 
-        // if post id was returned
-        if (result.id) {
-            alert('Post added successfully');
-        } else {
-            alert('Could not post');
-        }
+    // if post id was returned
+    if (result.id) {
+        alert('Post added successfully');
+    } else {
+        alert('Could not post');
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -90,11 +90,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const content = postForm.content.value;
         const userId = 3; // hardcoded, we are Clementine Bauch
 
-        addPost({content, userId});
+        addPost({ content, userId });
 
         window.location.reload();
     });
 
 });
 
-module.exports = { renderPosts, fetchPosts, filterPosts, addPost }; // Export funkcji renderPosts, aby można ją było testować.
+module.exports = { renderPosts, fetchPosts, filterPosts, addPost };

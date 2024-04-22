@@ -10,11 +10,13 @@
  */
 
 const { TextDecoder, TextEncoder, ReadableStream } = require("node:util")
+const {clearImmediate} = require('node:timers')
 
 Object.defineProperties(globalThis, {
   TextDecoder: { value: TextDecoder },
   TextEncoder: { value: TextEncoder },
   ReadableStream: { value: ReadableStream },
+  clearImmediate: {value: clearImmediate}
 })
 
 const { Blob, File } = require("node:buffer")
