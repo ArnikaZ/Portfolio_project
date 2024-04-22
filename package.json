@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "initialize": "cd server && npm install && cd ../jest && npm install",
+    "initialize": "cd server && npm install && cd ../client && npm install",
     "server": "cd server && npm run start",
     "client": "cd client && start index.html",
-    "test": "cd server && npm run test:coverage && start ./coverage/lcov-report/index.html"
+    "test-server": "cd server && npx jest --coverage && start ./coverage/lcov-report/index.html",
+    "test-client": "cd client && npx jest --coverage && start ./coverage/lcov-report/index.html"
   },
   "keywords": [],
   "author": "",

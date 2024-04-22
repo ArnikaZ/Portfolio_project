@@ -7,6 +7,7 @@ const userId = urlParams.get('userId');
 const albumId = urlParams.get('albumId');
 
 function renderProfile(profile) {
+    const profileInfo = document.querySelector('#personal_data_container');
 
     profileInfo.innerHTML = `
     <div id="left_side_data">
@@ -26,6 +27,9 @@ function renderProfile(profile) {
 }
 
 function renderGalleryContent(album) {
+    const albumHeader = document.querySelector('#Album');
+    const albumPhotos = document.querySelector('#Gallery');
+
     albumHeader.innerHTML = `
         <img src="${album.thumbnailUrl}" id="Album_photo1"/>
         <div id="Album_info">
@@ -68,3 +72,5 @@ async function loadGalleryContent() {
 
 loadProfile();
 loadGalleryContent();
+
+module.exports = { renderProfile, renderGalleryContent, loadProfile, loadGalleryContent };

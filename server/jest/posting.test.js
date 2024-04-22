@@ -1,6 +1,6 @@
 const request = require('supertest');
 
-const app = require('./server');
+const app = require('../server');
 
 // Test suite for POST /posts endpoint
 describe('POST /posts', () => {

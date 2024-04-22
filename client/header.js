@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', function() {
 const searchBar = document.querySelector('#search-form');
 const searchInput = document.querySelector('.search_input');
 
@@ -23,3 +24,5 @@ avatar.addEventListener('click', () => {
     window.location.href = "profile.html?userId=3";
 });
 
+
+});

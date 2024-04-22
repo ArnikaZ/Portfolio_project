@@ -1,6 +1,6 @@
 const request = require('supertest');
 
-const app = require('./server');
+const app = require('../server');
 
 describe('GET /albums/:id', () => {
   it('responds with albums and their photos for a valid user ID', async () => {
