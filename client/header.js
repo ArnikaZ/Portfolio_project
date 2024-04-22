@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const searchBar = document.querySelector('#search-form');
+const searchBar = document.querySelector('#search-form');
 const searchInput = document.querySelector('.search_input');
 
 const logo = document.querySelector('#logo');
