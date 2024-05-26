@@ -84,20 +84,36 @@ app.get('/users/:id', async (req, res) => {
 // get all albums of a particular user
 app.get('/albums/:id', async (req, res) => {
     const { id } = req.params;
-
     const result = {};
 
-    const albums = await fetch(`${apiURL}/albums`).then((response) => response.json());
-    const userAlbums = albums.filter((album) => album.userId == id);
+    try {
+        // try to fetch albums and photos all at once
+        const [albums, photos] = await Promise.all([
+            fetch(`${apiURL}/albums`).then((response) => response.json()),
+            fetch(`${apiURL}/photos`).then((response) => response.json())
+        ]);
 
-    for (const album of userAlbums) {
-        const photos = await fetch(`${apiURL}/photos`).then(response => response.json());
-        const albumPhotos = photos.filter(photo => photo.albumId == album.id);
-        result[album.id] = albumPhotos.map(photo => ({ ...photo }));
+        const userAlbums = albums.filter((album) => album.userId == id);
+
+        const photosByAlbum = photos.reduce((acc, photo) => {
+            if (!acc[photo.albumId]) {
+                acc[photo.albumId] = [];
+            }
+            acc[photo.albumId].push(photo);
+            return acc;
+        }, {});
+
+        for (const album of userAlbums) {
+            result[album.id] = photosByAlbum[album.id] || [];
+        }
+
+        res.status(200).json(result);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
     }
-
-    res.status(200).json(result);
 });
+
 
 
 // search for a user
